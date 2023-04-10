@@ -15,5 +15,5 @@ For local testing, wkhtmltopdf is installed globally using homebrew:
 3. Run generate.rb
 `ruby generate.rb`
 
-4. Notice options meant for pdfkit are being rejected by wkhtmltopdf
-5. Look at the source code of the pdfkit ruby gem to see PDFKit initializer is meant to accept options object as second argument
+4. You should see an error rejecting any params that are not allowed for wkhtmltopdf. The trouble here is that the params were not meant for wkhtmltopdf, they were meant for pdfkit. 
+5. If you look at the source code of the pdfkit ruby gem, you will see the PDFKit initializer is meant to accept options object as second argument. The trouble is that those same options are passed to wkhtmltopdf's initializer where they are not allowed. 
